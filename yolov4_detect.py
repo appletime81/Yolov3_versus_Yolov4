@@ -42,7 +42,9 @@ def detect(img, img_path):
 
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.3, 0.4)  # 消除重疊框選
     font = cv2.FONT_HERSHEY_PLAIN
-
+    # print(indexes)
+    # print(len(boxes))
+    # print(class_ids)
     for i in range(len(boxes)):
         if i in indexes:
             x, y, w, h = boxes[i]
